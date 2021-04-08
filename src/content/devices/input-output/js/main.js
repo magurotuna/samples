@@ -90,6 +90,7 @@ function handleError(error) {
 function start() {
   if (window.stream) {
     window.stream.getTracks().forEach(track => {
+      window.stream.removeTrack(track);
       track.stop();
     });
   }
